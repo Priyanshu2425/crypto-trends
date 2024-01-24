@@ -1,0 +1,19 @@
+#dashboard{
+    width: 70vw;
+    background-color: #06101C;
+    color: white;
+
+}
+
+#crypto-bubbles{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#crypto-bubbles div{
+    background-color: #17342E;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
