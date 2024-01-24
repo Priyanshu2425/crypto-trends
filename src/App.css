@@ -1,9 +1,9 @@
 
 #main-view{
     display: grid;
-    grid-template-columns: 30vw 60vw;
-    grid-template-rows: 80vh;
-    height: 100%;
+    grid-template-columns: 20vw 79vw;
+    grid-template-rows: 97vh;
+
 }
 
 #main-navbar-div{

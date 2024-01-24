@@ -5,17 +5,16 @@ export default function CryptoView(){
     const [ circulating_supply, setCirculatingSupply] = useState();
 
     const dataRender = data.map((item) => {
-        let max_size = 500;
         let bubble_size = null;
         try{
             let item_market_cap = null;
             if(item.quote.USD.market_cap < 95540947051.54237){
                 item_market_cap = 95540947051.54237;
-                bubble_size = Math.floor((item_market_cap) / 2555000000) ;
+                bubble_size = Math.floor((item_market_cap) / 2555000000) * (Math.random() * 5);
             }else{
                 item_market_cap = item.quote.USD.market_cap;
                 
-            bubble_size = Math.floor((item_market_cap) / 2000000000) ;
+                bubble_size = Math.floor((item_market_cap) / 20000000000) * (Math.random() * 3);
             }
         }catch(error){
             bubble_size = 500;
@@ -81,7 +80,9 @@ export default function CryptoView(){
                 <label>Circulating Supply</label>
 
                 <div id="crypto-bubbles">
-                    {dataRender}
+                    {dataRender.slice(0, 35).sort((item1, item2)=>{
+                        return item1.market_cap - item2.market_cap;
+                    })}
                 </div>
             </div>
         </>
